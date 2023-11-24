@@ -4,10 +4,9 @@ package { 'python3-pip':
   ensure => present,
 }
 
-package { 'flask':
-  ensure   => '2.1.0',
-  version  => 'Werkzeug 2.1.1',
-  name     => 'flask',
+package { ['Flask', 'Werkzeug']:
+  ensure   => '2.1.0,2.1.1',
   provider => 'pip3',
-  require  => package['python3-pip'],
+  require  => Package['python3-pip'],
 }
+
