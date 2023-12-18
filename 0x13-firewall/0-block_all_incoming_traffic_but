@@ -2,6 +2,10 @@
 # Configures a ufw firewall to block all incoming traffic
 # Except for TCP ports 22, 443 and 80
 
+if [ "$(hostname)" != "web-01" ]; then
+    echo "This script is meant to run on web-01 only. Exiting."
+    exit 1
+fi
 sudo apt-get update
 sudo apt-get install -y ufw
 sudo ufw default deny incoming
