@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-"""This script retrieves and displays a user's TODO list from a REST API."""
+"""Retrieve a user's TODO list from a REST API."""
+import csv
 from requests import get
 from sys import argv
 
@@ -20,8 +21,11 @@ if __name__ == "__main__":
     no_comp_task = len(completed_task)
     no_tasks = len(tasks)
 
-    print(f"{employee_name} is done with tasks({no_comp_task}/{no_tasks}):")
-
-    for task in completed_task:
-        print(f"\t {task['title']}")
-
+    file_name = f"{employee_ID}.csv"
+    with open(file_name, 'w', newline="") as file:
+        file = csv.writer(file, quoting=csv.QUOTE_ALL)
+        for task in tasks:
+            file.writerow([employee_ID,
+                           employee_info['username'],
+                           task['completed'],
+                           task['title']])
