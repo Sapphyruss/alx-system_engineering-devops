@@ -10,6 +10,7 @@ Impact: Degraded performance and intermittent service disruptions for the web ap
 
 
 
+https://preview.redd.it/hdqjfez236pa1.png?width=624&format=png&auto=webp&s=f0ba5faa2e2652c8ccb81e174eece5f72f9792a1![image](https://github.com/Sapphyruss/alx-system_engineering-devops/assets/106839780/1358d69f-c671-4620-af04-9bd8042afbb3)
 
 
 
