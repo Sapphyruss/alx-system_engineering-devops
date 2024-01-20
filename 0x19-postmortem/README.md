@@ -1,4 +1,4 @@
-POSTMORTEM REPORT 
+POSTMORTEM REPORT
 Service disruption - slow response on the web app
 
 
@@ -7,10 +7,6 @@ Duration: 4 hours
 Start Time: January 20, 2024, 08:00 AM (UTC)
 End Time: January 20, 2024, 12:00 PM (UTC)
 Impact: Degraded performance and intermittent service disruptions for the web application. Approximately 30% of users experienced slow response times and intermittent errors.
-
-
-
-![alt text]https://preview.redd.it/hdqjfez236pa1.png?width=624&format=png&auto=webp&s=f0ba5faa2e2652c8ccb81e174eece5f72f9792a1![image](https://github.com/Sapphyruss/alx-system_engineering-devops/assets/106839780/1f05a5c0-b70d-4a3f-85f3-e0d271031c1e)
 
 
 Timeline:
@@ -25,11 +21,6 @@ Timeline:
 Root Cause and Resolution:
 Root Cause: The load balancer's misconfiguration resulted in uneven distribution of incoming requests, causing performance degradation and intermittent errors.
 Resolution: The misconfiguration was corrected by adjusting the load balancer settings to evenly distribute traffic among backend servers. Additionally, monitoring rules were refined to detect similar issues promptly.
-
-
-
-
-
 
 
 
