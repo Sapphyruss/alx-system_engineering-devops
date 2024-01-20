@@ -4,8 +4,8 @@ Service disruption - slow response on the web app
 
 Summary:
 Duration: 4 hours
-Start Time: January 20, 2024, 08:00 AM (UTC)
-End Time: January 20, 2024, 12:00 PM (UTC)
+Start Time: January 19, 2024, 11:03 AM (UTC)
+End Time: January 19, 2024, 03:00 PM (UTC)
 Impact: Degraded performance and intermittent service disruptions for the web application. Approximately 30% of users experienced slow response times and intermittent errors.
 
 
