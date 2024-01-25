@@ -63,7 +63,7 @@ rewrite ^/redirect_me https://github.com/Sapphyruss/ permanent;
         }
 
 	# Serve AirBnB_clone_v3 API
-	location /api {
+	location /api/ {
 		proxy_pass http://127.0.0.1:5002/api;
 	}
 
