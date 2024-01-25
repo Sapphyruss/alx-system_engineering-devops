@@ -19,9 +19,9 @@
 #
 
 server {
-	listen 80 default_server;
+	# listen 80 default_server;
 rewrite ^/redirect_me https://github.com/Sapphyruss/ permanent;
-	listen [::]:80 default_server;
+	# listen [::]:80 default_server;
 
 	# SSL configuration
 	#
