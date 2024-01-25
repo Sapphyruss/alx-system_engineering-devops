@@ -1,14 +1,11 @@
 # resolve limit of traffic 
 
-# Increase ulimit of the default file
-exec { 'fix-nginx-limit':
-    command => 'sed -i "s/15/1024/" /etc/default/nginx',
-    path    => '/bin/:/usr/local/bin',
+exec { 'update ulimit':
+  command  => "sed -i 's/^ULIMIT=.*/ULIMIT=\"-n 15000\"/' /etc/default/nginx",
+  provider => 'shell',
 }
 
-# Restart Nginx
-exec { 'nginx-restart':
-  command => '/usr/sbin/service nginx restart',
-  path    => '/etc/init.d/'
-  require => Exec['fix-nginx-limit'],
+-> exec { 'restart':
+  command  => 'service nginx restart',
+  provider => 'shell',
 }
