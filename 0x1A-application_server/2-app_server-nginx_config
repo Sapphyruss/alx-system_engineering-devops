@@ -12,7 +12,7 @@ server {
         # Add index.php to the list if you are using PHP
         index index.html index.htm index.nginx-debian.html;
 
-        servername ;
+        server_name 54.173.245.77;
 
         location /hbnb_static/ {
                 alias /data/web_static/current/;
