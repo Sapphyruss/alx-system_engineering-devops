@@ -1,4 +1,12 @@
 #!/usr/bin/env bash
 # Don't interrupt me
 
-pgrep gunicorn | xargs -I {} kill -HUP {}
+GUNICORN_PID=$(pgrep gunicorn)
+
+if [ -z "$GUNICORN_PID" ]; then
+    echo "Gunicorn is not running."
+    exit 1
+fi
+
+kill -HUP "$GUNICORN_PID"
+
