@@ -1,4 +1,8 @@
 #!/usr/bin/env bash
-# Don't interrupt me
+# reload gunicorn
 
-pgrep gunicorn | xargs -I {} kill -HUP {}
+for pid in $(ps aux | pgrep 'gunicorn' | grep -v grep | awk '{print $2}'); do
+    echo "Reloading Gunicorn worker: $pid"
+    kill -HUP "$pid"
+    sleep 1  # Optional: Add a small delay between worker reloads
+done
