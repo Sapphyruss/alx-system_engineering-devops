@@ -1,12 +1,27 @@
 #!/usr/bin/env bash
 # Don't interrupt me
 
-GUNICORN_PID=$(pgrep gunicorn)
+# Get the PID of the Gunicorn master process
+MASTER_PID=$(pgrep -o gunicorn)
 
-if [ -z "$GUNICORN_PID" ]; then
+# Check if Gunicorn is running
+if [ -z "$MASTER_PID" ]; then
     echo "Gunicorn is not running."
     exit 1
 fi
 
-kill -HUP "$GUNICORN_PID"
+# Display the current Gunicorn processes
+echo "Before restart:"
+ps auxf | grep gunicorn
 
+# Send HUP signal to the master process for a graceful restart
+kill -HUP "$MASTER_PID"
+
+# Wait for a short time to allow workers to finish processing requests
+sleep 5
+
+# Display the Gunicorn processes after restart
+echo -e "\nAfter restart:"
+ps auxf | grep gunicorn
+
+echo "Gunicorn workers restarted gracefully."
